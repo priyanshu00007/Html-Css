@@ -1,0 +1,123 @@
+/* shareBtn.addEventListener('click', () => {
+    const shareWindow = window.open('', 'Share', 'width=500,height=500');
+    shareWindow.document.write(`
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color:white;
+    }
+    h1 {
+    color: black;
+    margin-bottom: 10px;
+    }
+    a {
+    display: block;
+    margin-bottom: 10px;
+    color: #337ab7;
+    text-decoration: none;
+    margin:30px 50px;
+    border:2px solid black;
+    padding:20px 0px;
+    border-radius: 5px;
+    }
+    a:hover {
+    background-color: black;
+    border:2px solid white;
+    }
+    img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    </style>
+    <h1>Share on:</h1>
+    <h1>Share on:</h1>
+        <a href="https://wa.me/?text=${encodeURIComponent('Your signature')}"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"> WhatsApp</a>
+        <a href="https://www.instagram.com/share?url=${encodeURIComponent('Your signature')}"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"> Instagram</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('Your signature')}"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Facebook_icon_2013.svg"> Facebook</a>
+        <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent('Your signature')}"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAAYFBMVEUAxP////8Awv8Av/8Avf/7/v8Au/9Qzv+15//s+f/3/P/w+f901v/y+//b8/9/2f/U8v9k0v+h4P/i9v+W3//K7v8ox/+96v+J2v9Oy/9IyP+q5P8zxf9ezv9x0v+V3P+n4L0dAAAFKklEQVR4nO2c13LrIBCG5UXd6gV1+/3f8kiK7biogQEpZ/ab3DgzNvsL2EKRpiEIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiD/H6BB/7e3Fd9DCLW8G3H7lwW1VhadnonCuoVJRUeXWYevSkZc+1J/Wg5aFx9ZDnj5p5SRvKxeDSf0kjgNkWzPFw+LNv6MlmG0lfTx00BoaTsnpxJh8TwQZ9xPixbzUobBVvx0DhCIk9zt/yO7Y0jqlpxNwNwQe1D0jkAHK8lTY/jotGJt/zAoPp18PjXmqpaTW8alHTju7aPs6W8OvsjlGWl6uKql/2XX/f2Q6OLtf4He2mF/ZnSDlhcK2VqgvLXUsMZtPWXUEkie/L1JD39U1ExqSOkuWf5JSsfvyZw1ZvDbWsfSEAQLhk9pGbw0aNUls+SJeQp6jrddDSkXouWUlo4Q6JXkp6CS1jn6+alFN9s+cdbd8jNOaV2uTX5me2KsmM9iToZdbZul4DlMYs5R4Ixh0y8lTpqXnunVBPEmNaRh0vLAvUp1AOf35jKyoT3KNsoeJFLds/4ups/dtdUW4cI2yu40csPmR88MlGttQsalJTOlatHMyUcc0eWhRm0OKUYmO50xJ2re8SHWC1+CijFiDnCm5izMuqUonO8duDCmMqch0siv/odyZhojD+nMs4Qtyf8rqcRY+QsxZg3w83LasbGLSS9KVmX0pTLez69U/zSDXYwtfb78UC1a4Qa2Rd4tOa4Yfcaf3TH8INPMF2OOK2ZT+Zsm1PwdbwcWA8k2g6LGq4D0Yw4OLEZrGUKgH+V5YTOnmerEaDFb1ciBQjHalT2iH1YMtPZ86PxDYiwgoxrOYmsjhtyi7AYposQiOkDNkQdvR0HGrI3Lkq4TNBYx25XY+RVOqCI108cOMVzHLjOJTiCVt/D3LGZ5t0gUAVUhhjSS3dgPkZpt2Vh2hBkpFIUZ6cG/x1XimftJIzfA/HBWUjMvrQEIxFEy/3sI39okE/L3zG6AJ1+M9M3MB0Rm6B8xQnU5M/OuMSuuqikzIHug+cpGmca9pr+ZXKUYrZWb1ChJmR9A28jMalRKGdVILAACpaNsUAOhtODJdFZCkJxOUmmjKP1/U9OW65Zx0O2gZaCW0DnFTlr63rGEL9LsMGPuEN2KhepJdpFRVllN6yoOM5Fuje3YlyigCE5OLtw9ZztIGWaLjDgTsZ0uFAbvOaUlfLVZ2RPAeoB0nWI3TwaWaC2pvAOMq4geaO5V4XbZpxqxAy3aU4umUZF1gLurlJ5OYMXp7dsxwyKasL4pJJ/626JGVI0WHOFuGYjJM50dvfITUPGcv3zDVXDsbxNAw6+3OThu48gCWu+79edC5XrsOrTKIm43na8cJN4BAGp5PAu3Eu+UfAPh2VZLN170UEy78VTdq5bugFpA63icWrrtyopawEp4coED9guQKuFyztHhtBBeKafcOpYfAwJewZme2Us3O5RDdIjtYOp60AaMfRYvPwEA3SRWFp2565n9lpXuGgjRe4hmhcmXq5nB+kU1yZRpkDoijjX50m9grQKdmMVlN6C7axmGmWV/XVgaQfbNK0UE0stp+HP9gSA5UGLZyykLTm88SOkO0i13CL1cuUJ+XlYHfGERQB03jIuzTjP1BqOj0Hb2ZjftF3F9vOL4BYD392FNYURZdbCJMgMxderZkWtM4aZFElPd/BNK7uhmb29lvVBRIKapH8cNIwiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCqOcfw6RFhSC7Ym8AAAAASUVORK5CYII="> Twitter</a>
+    <!-- Add more social media platforms here -->
+    `); */
+
+
+
+    shareBtn.addEventListener('click', () => {
+        const shareWindow = window.open('', 'Share', 'width=500,height=500');
+        shareWindow.document.write(`
+            <style>
+            body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        background-color:white;
+        }
+        h1 {
+        color: black;
+        margin-bottom: 10px;
+        }
+        a {
+        display: block;
+        margin-bottom: 10px;
+        color: #337ab7;
+        text-decoration: none;
+        margin:30px 50px;
+        border:2px solid black;
+        padding:20px 0px;
+        border-radius: 5px;
+        }
+        a:hover {
+        background-color: black;
+        border:2px solid white;
+        }
+        img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+            </style>
+            <h1>Share on:</h1>
+            <input type="file" id="fileInput" />
+            <button id="shareFileBtn">Share File</button>
+            <h1>Or share this link:</h1>
+            <a href="https://wa.me/?text=${encodeURIComponent('Your signature')}"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"> WhatsApp</a>
+            <a href="https://www.instagram.com/share?url=${encodeURIComponent('Your signature')}"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"> Instagram</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('Your signature')}"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Facebook_icon_2013.svg"> Facebook</a>
+            <!-- Add more social media platforms here -->
+        `);
+    
+        const fileInput = shareWindow.document.getElementById('fileInput');
+        const shareFileBtn = shareWindow.document.getElementById('shareFileBtn');
+    
+        shareFileBtn.addEventListener('click', () => {
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+    
+            // Send the file to your server or API
+            fetch('/upload-file', {
+                method: 'POST',
+                body: formData,
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                const url = data.url;
+                shareWindow.document.write(`
+                    <h1>File shared successfully!</h1>
+                    <h1>Share on:</h1>
+                    <a href="https://wa.me/?text=${encodeURIComponent(url)}"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"> WhatsApp</a>
+                    <a href="https://www.instagram.com/share?url=${encodeURIComponent(url)}"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"> Instagram</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Facebook_icon_2013.svg"> Facebook</a>
+                    <!-- Add more social media platforms here -->
+                `);
+            })
+            .catch((error) => {
+                console.error('Error sharing file:', error);
+            });
+        });
+    });

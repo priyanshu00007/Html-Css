@@ -1,0 +1,70 @@
+.signature-pad {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.signature-pad canvas {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tools {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tools button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #337ab7;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.tools button:hover {
+    background-color: #23527c;
+}
+
+.signature-pad button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #337ab7;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.signature-pad button:hover {
+    background-color: #23527c;
+}
+
+#signature-container {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 40px auto;
+    overflow: auto;
+}
+
+#loading-canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quiz-game {
+  width: 50%;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #ccc;
+}
+
+#result-card {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#play-again {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#play-again:hover {
+  background-color: #3e8e41;
+}   
+#result-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1;
+  display: none;
+  width: 70%; /* Adjust the width to cover more than 50% of the page */
+  height: 60%; /* Adjust the height to cover more than 50% of the page */
+  overflow-y: auto; /* Add a scrollbar if the content exceeds the height */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+          <p id="timer">Time Left: 60</p>
+          <p id="correct-counter">Correct: 0</p>
+          <p id="incorrect-counter">Incorrect: 0</p>
+        </div>
+      </header>
+      <div class="quiz-game">
+        <h1>Quiz Game</h1>
+        <button id="start-quiz">Start Quiz</button>
+        <p id="question" style="display: none;"></p>
+        <button id="option1" style="display: none;"></button>
+        <button id="option2" style="display: none;"></button>
+        <button id="option3" style="display: none;"></button>
+        <button id="option4" style="display: none;"></button>
+        <p id="result" style="display: none;"></p>
+        <div id="result-card" style="display: none;">
+          <h2>Results</h2>
+          <p id="correct-results"></p>
+          <p id="incorrect-results"></p>
+          <p id="final-message"></p>
+          <button id="play-again">Play Again</button>
+        </div>
+      </div>
+    <script src="./script.js"></script>
+</body>
+</html>

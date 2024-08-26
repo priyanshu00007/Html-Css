@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Style the task input field */
+#task-input {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+/* Style the add task button */
+#add-task-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style the task list */
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style each task list item */
+#task-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Style the task text */
+#task-list li span {
+  font-size: 16px;
+}
+
+/* Style the delete button */
+.delete-btn {
+  background-color: #f44336;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+    </style>
+</head>
+<body>
+    <input id="task-input" type="text" placeholder="Add new task">
+<button id="add-task-btn">Add Task</button>
+<ul id="task-list"></ul>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Display</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Holiday Display</h1>
+        <select id="selectCountry" class="dropdown">
+            <option value="indian">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="bm">Bermuda</option>
+            <option value="swedish">Sweden</option>
+        </select>
+        <div id="output" class="output"></div>
+    </div>
+
+    <script type="text/javascript">
+        $("#selectCountry").change(function(e) {
+            $("#output").html("<p class='loading'>Loading...</p>");
+            var country = $("#selectCountry").val();
+            var calendarUrl = 'https://www.googleapis.com/calendar/v3/calendars/en.' + country 
+                              + '%23holiday%40group.v.calendar.google.com/events?key=AIzaSyDfKWdpeRjC-731P6PQkR8DsKuuVewHpqc';
+
+            $.getJSON(calendarUrl)
+                .done(function(data) {
+                    $("#output").empty();
+                    data.items.forEach(function(item) {
+                        var startDate = new Date(item.start.date);
+                        if (startDate.getFullYear() === 2024) {
+                            $("#output").append(
+                                "<div class='holiday-item'>" +
+                                "<h3>" + item.summary + "</h3>" +
+                                "<p>" + item.start.date + "</p>" +
+                                "</div>"
+                            );
+                        }
+                    });
+                })
+                .fail(function(error) {
+                    $("#output").html("<p class='error'>An error occurred. Please try again later.</p>");
+                });
+        });
+
+        // Trigger change to load initial data
+        $("#selectCountry").trigger("change");
+    </script>
+</body>
+</html>

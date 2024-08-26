@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser with Google Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="browser">
+        <header class="header">
+            <div id="tabsHeader" class="tabs">
+                <!-- Tabs will be dynamically added here -->
+            </div>
+            <div class="address-bar">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button id="searchButton">Search</button>
+                <button id="newTabButton">New Tab</button>
+            </div>
+        </header>
+        <main id="content" class="main-content">
+            <!-- Content for tabs will be dynamically added here -->
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script async src="https://cse.google.com/cse.js?cx=YOUR_CUSTOM_SEARCH_ENGINE_ID"></script>
+    <script>
+        // Function to handle Google search
+        function executeGoogleSearch() {
+            const query = document.getElementById('searchInput').value.trim();
+            if (query) {
+                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            }
+        }
+
+        // Function to create a new tab
+        function createNewTab() {
+            const tabCount = document.querySelectorAll('.tab').length + 1;
+            const tabId = `tab-${tabCount}`;
+            const tabContentId = `content-${tabCount}`;
+
+            // Create new tab element
+            const tabElement = document.createElement('div');
+            tabElement.classList.add('tab');
+            tabElement.id = tabId;
+            tabElement.textContent = `Tab ${tabCount}`;
+            tabElement.addEventListener('click', () => activateTab(tabId));
+
+            // Create new tab content
+            const tabContent = document.createElement('div');
+            tabContent.id = tabContentId;
+            tabContent.classList.add('tab-content');
+            tabContent.innerHTML = `<h1>Content for Tab ${tabCount}</h1>`;
+
+            // Append new tab and content
+            document.getElementById('tabsHeader').appendChild(tabElement);
+            document.getElementById('content').appendChild(tabContent);
+
+            // Activate the new tab
+            activateTab(tabId);
+        }
+
+        // Function to activate a tab
+        function activateTab(tabId) {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById(`content-${tabId.split('-')[1]}`).style.display = 'block';
+        }
+
+        // Add event listeners to search and new tab buttons
+        document.getElementById('searchButton').addEventListener('click', executeGoogleSearch);
+        document.getElementById('searchInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                executeGoogleSearch();
+            }
+        });
+        document.getElementById('newTabButton').addEventListener('click', createNewTab);
+
+        // Initialize with one tab (Google Search)
+        createNewTab(); // Initial tab
+    </script>
+</body>
+</html>

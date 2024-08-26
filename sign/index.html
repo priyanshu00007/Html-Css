@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Pad</title>
+    <link rel="stylesheet" href="stule.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+<body>
+    <div class="signature-pad">
+        <canvas id="signature-canvas"></canvas>
+        <div class="tools">
+            <button id="pen-tool">Pen</button>
+            <button id="marker-tool">Marker</button>
+            <button id="eraser-tool">Eraser</button>
+            <button id="clear-tool">Clear</button>
+        </div>
+        <button id="upload-btn">Upload Signature</button>
+        <button id="create-btn">Create Signature</button>
+        <button id="paste-btn">Paste Signature</button>
+        <button id="share-btn">Share Signature</button>
+    </div>
+    <div id="signature-container" style="height: 300px; overflow: auto;">
+        <canvas id="signature-canvas" width="600" height="300"></canvas>
+    </div>
+    <canvas id="loading-canvas" width="400" height="200"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>

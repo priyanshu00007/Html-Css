@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="users-page">
+    <header>
+        <button id="sidebar-toggle" class="sidebar-toggle">&#9776;</button>
+        <h1>Company Dashboard</h1>
+    </header>
+    <div id="sidebar" class="sidebar">
+        <button id="close-sidebar" class="close-sidebar">&times;</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="./users.html" class="active">Users</a></li>
+                <li><a href="./products.html">Products</a></li>
+                <li><a href="./transactions.html">Transactions</a></li>
+                <li><a href="./analytics.html">Analytics</a></li>
+                <li><a href="./revenue.html">Revenue</a></li>
+                <li><a href="./reports.html">Reports</a></li>
+                <li><a href="./teams.html">Teams</a></li>
+                <li><a href="./user.html">User</a></li>
+                <li><a href="./settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="main-content" class="main-content">
+        <div id="content-area">
+            <div class="container">
+                <h2>Users</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>john@example.com</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jane Smith</td>
+                            <td>jane@example.com</td>
+                            <td>Inactive</td>
+                        </tr>
+                        <!-- More rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <button id="sidebar-toggle" class="sidebar-toggle">&#9776;</button>
+            <h1>SaaS Dashboard</h1>
+        </div>
+    </header>
+
+    <div id="sidebar" class="sidebar">
+        <button id="close-sidebar" class="close-sidebar">&times;</button>
+        <nav>
+            <ul>
+                <li><a href="#" data-section="subscription" class="active">Subscription</a></li>
+                <li><a href="#" data-section="cloud">Cloud Hosting</a></li>
+                <li><a href="#" data-section="web-interface">Web Interface</a></li>
+                <li><a href="#" data-section="updates">Automatic Updates</a></li>
+                <li><a href="#" data-section="scalability">Scalability</a></li>
+                <li><a href="#" data-section="multitenancy">Multi-Tenancy</a></li>
+                <li><a href="#" data-section="user-management">User Management</a></li>
+                <li><a href="#" data-section="integration">Integration Capabilities</a></li>
+                <li><a href="#" data-section="security">Data Security</a></li>
+                <li><a href="#" data-section="support">Customer Support</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="main-content" class="main-content">
+        <div id="content-area">
+            <div id="subscription" class="content-section active">
+                <h2>Subscription-Based Access</h2>
+                <p>Learn about different subscription plans and pricing tiers.</p>
+            </div>
+            <div id="cloud" class="content-section">
+                <h2>Hosted on the Cloud</h2>
+                <p>Understand how SaaS applications are hosted on cloud servers.</p>
+            </div>
+            <div id="web-interface" class="content-section">
+                <h2>Web-Based Interface</h2>
+                <p>Explore how users interact with the software through a web browser.</p>
+            </div>
+            <div id="updates" class="content-section">
+                <h2>Automatic Updates</h2>
+                <p>Details about how updates are managed and deployed.</p>
+            </div>
+            <div id="scalability" class="content-section">
+                <h2>Scalability</h2>
+                <p>Information on how the SaaS platform scales to meet user needs.</p>
+            </div>
+            <div id="multitenancy" class="content-section">
+                <h2>Multi-Tenancy</h2>
+                <p>Explanation of how multiple users share the same application instance.</p>
+            </div>
+            <div id="user-management" class="content-section">
+                <h2>User Management</h2>
+                <p>Features for managing user accounts, roles, and permissions.</p>
+            </div>
+            <div id="integration" class="content-section">
+                <h2>Integration Capabilities</h2>
+                <p>Overview of APIs and integration options for connecting with other software.</p>
+            </div>
+            <div id="security" class="content-section">
+                <h2>Data Security</h2>
+                <p>Details on how user data is protected and secured.</p>
+            </div>
+            <div id="support" class="content-section">
+                <h2>Customer Support</h2>
+                <p>Information on the support channels available for users.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

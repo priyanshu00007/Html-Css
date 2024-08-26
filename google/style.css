@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+.browser {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+    background-color: #e9ecef;
+    border-bottom-color: #007bff;
+}
+
+.address-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.address-bar input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.address-bar button {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.address-bar button:hover {
+    background-color: #0056b3;
+}
+
+.main-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.tab-content {
+    display: none;
+}

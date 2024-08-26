@@ -1,0 +1,140 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f4f7f9;
+    color: #333;
+}
+
+header {
+    background-color: #344955;
+    color: white;
+    padding: 15px 30px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.sidebar-toggle {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+#sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #2c3e50;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    transition: left 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar nav ul li {
+    padding: 15px 20px;
+}
+
+#sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#sidebar nav ul li a.active, #sidebar nav ul li a:hover {
+    background-color: #1abc9c;
+}
+
+#main-content {
+    margin-left: 0;
+    transition: margin-left 0.3s;
+    flex: 1;
+    padding: 20px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.content-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-section {
+    display: none;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.content-section.active {
+    display: block;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    text-align: center;
+}
+
+p {
+    color: #7f8c8d;
+    text-align: center;
+    margin: 0;
+}
+
+/* Sidebar toggle button */
+#sidebar-toggle {
+    margin-left: auto;
+}
