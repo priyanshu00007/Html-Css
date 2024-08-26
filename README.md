@@ -48,8 +48,10 @@ Feel free to explore, learn from, and contribute to my projects. If you have any
 
 To clone this repository, run the following command in your terminal:
 
-```bash
 git clone https://github.com/priyanshu00007/Html-Css.git
+
+
+
 License
 ---------
 This repository is licensed under the MIT License. See below for details:
@@ -75,7 +77,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 Git Commands
+
 ---------------
+
 git add . - Stage all changes
 git push origin main - Push changes to main branch
 git commit --amend -m "Updated commit message" - Amend commit message
@@ -83,6 +87,7 @@ git push origin main --force - Force push changes to main branch
 continue
 Here is the rest of the markdown code:
 MarkDown
+
 ## Contributing
 ------------
 
@@ -95,12 +100,10 @@ Contributions are welcome! If you'd like to contribute to this repository, pleas
 
 ## Authors
 --------
-
 * **Priyanshu** - Initial work and maintenance
 
 ## Acknowledgments
 ----------------
-
 * Thanks to all contributors and users of this repository!
 
 ## Git Commands (continued)
